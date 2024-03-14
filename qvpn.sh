@@ -4,7 +4,7 @@ if [ $# -gt 0 ];
 then
     if [ $1 == "-s" ];
     then
-        echo nordvpn status
+        nordvpn status
 	    exit 0
     fi
 fi
