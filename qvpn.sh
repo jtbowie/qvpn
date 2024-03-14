@@ -1,15 +1,17 @@
 #!/usr/bin/bash
 
-nordvpn status | grep "Con" >& /dev/null
-
-
-if [ $1 == "-s" ];
+if [ $# -gt 0 ];
 then
-	nordvpn status
-	exit 0
+    if [ $1 == "-s" ];
+    then
+        echo nordvpn status
+	    exit 0
+    fi
 fi
 
-if [ $? -gt 0 ]
+nordvpn status | grep "Con" >& /dev/null
+
+if [ $? -gt 0 ];
 then
 	nordvpn connect
 else
